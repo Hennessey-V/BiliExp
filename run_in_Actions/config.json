@@ -189,7 +189,7 @@
         },
         "hooks": [ // 在这里以数组的形式定义所有消息推送回调接口
             {  //Pushplus推送
-            	"enable": true,
+            	"enable": true,//dfgds
                 "name": "pushplus消息推送",
                 "msg_separ": "<br>",
                 "method": 1,
