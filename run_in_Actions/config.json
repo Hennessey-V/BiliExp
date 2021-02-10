@@ -187,7 +187,20 @@
             "SKEY": "" */
         },
         "hooks": [ // 在这里以数组的形式定义所有消息推送回调接口
-            {
+            {  //Pushplus推送
+            	"enable": true,
+                "name": "pushplus消息推送",
+                "msg_separ": "<br>",
+                "method": 1,
+                "url": "http://pushplus.hxtrip.com/send",
+                "params": {
+                    "token":"{18e7e42d8da64981ae55560684c6a3c8}",
+                    "topic":"Bilibili_Push",
+                    "title": "{title}",
+                    "content": "{msg_raw}"
+                }
+            }
+            /*{
                 "enable": false, // 开关，需要开启请直接把本项删除或设置为true
                 "name": "server酱消息推送", // webhook名称，仅用于日志显示不用于实际消息推送
                 "msg_separ": "\n\n",       // 消息分隔符，推送消息时将每一条消息用两个换行符(\n)隔开
@@ -197,7 +210,7 @@
                     "text": "{title}",
                     "desp": "{msg_simple}" 
                 }
-            }/*, //若要实现其他消息推送接口，需要自己查阅相关文档构建method，url和params三个参数，下面是邮箱推送和telegram_bot推送的例子，其他平台自行探索
+            }, //若要实现其他消息推送接口，需要自己查阅相关文档构建method，url和params三个参数，下面是邮箱推送和telegram_bot推送的例子，其他平台自行探索
             {
                 "enable": false,
                 "name": "邮箱消息推送",
